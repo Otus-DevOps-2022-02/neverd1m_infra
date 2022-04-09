@@ -4,8 +4,17 @@ users:
     lock_passwd: false # Запрет на ввод пароля.
     passwd: $6$rounds=4096$vrVpF3Bm2pTVKAb$QISa6TDgOMKjb.0qKJ3CwiUM.uPTR8X81bB9KVEBboqbZg/.RgPRDlBSFWI8paTuN4kuTak5MzNp8k.otff.Q. # hash пароля.
     home: /home/yc-user # Домашняя директория для пользователя.
-    sudo: yc-user=(ALL) NOPASSWD:ALL
+    sudo: ALL=(ALL) NOPASSWD:ALL
     shell: /bin/bash # Среда по умолчанию.
     ssh_authorized_keys: # Публичный ssh ключ.
      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCn/SW3Ihdyk9b5ITEXsnOn0eRt3fob3zM8IG9hByY+Wy8GUDHOKhra6aa+bGX5WcPUh4sYrJyu3FjX6JXIF+GjrfqfXx1k5jfE7lNvquOYhPSMH7QfIuNgnbYQuflICX9p2Ki8lLBhXiysKlB0mlcf3V+oLaSFb3BDelmpqY2ZiHXBJhcPM5Yzy9EiEXJxcsOkFsG2t5hu3RQEBMo58vYZS0tAYhSV0gLxu8+IUojJ1pZCwKAtSxJ5Bh5T2iB84Am52ow3WelgRmoL4ubXjt4hXx124gHu3ESKxoDUlAl8Vl7Y2s4QwX672x/5Q4qdUowAmZlcUMUkrGVHWtieDMkZQ9e/AcppNLGHj69a9M88u6wn7IOEDrjWRGZcctD2HC3JAuRsUsY9F7EAczb8pU4GT8hmNoSe/IoRbGhM/X1+LiWqV2R5PMTGwHidl8tnn+mhWaLtmXmpxJFIY+DcwI/i0kp585RdEehsIRIhHPjTRN+/DPvsNu+Jn6WWEDge6r8= paniklov@paniklov-pc"
     groups: sudo # В какую группу включить сразу.
+
+runcmd:
+  - wget "https://raw.githubusercontent.com/Otus-DevOps-2022-02/neverd1m_infra/cloud-testapp/yc-creation/install_ruby.sh"
+  - bash install_ruby.sh
+  - wget "https://raw.githubusercontent.com/Otus-DevOps-2022-02/neverd1m_infra/cloud-testapp/yc-creation/install_mongodb.sh"
+  - bash install_mongodb.sh
+  - wget "https://raw.githubusercontent.com/Otus-DevOps-2022-02/neverd1m_infra/cloud-testapp/yc-creation/deploy.sh"
+  - bash deploy.sh
+  - rm install_ruby.sh install_mongodb.sh deploy.sh
