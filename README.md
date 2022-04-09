@@ -23,7 +23,7 @@ someinternalhost_IP = 10.128.0.5
 https://51.250.72.199.nip.io/
 
 #TestApp homework
-testapp_IP=35.198.167.169
+testapp_IP=51.250.76.96
 testapp_port=9292
 
 #CLI command
