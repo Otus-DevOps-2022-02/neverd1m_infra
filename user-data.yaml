@@ -11,10 +11,10 @@ users:
     groups: sudo # В какую группу включить сразу.
 
 runcmd:
-  - wget "https://raw.githubusercontent.com/Otus-DevOps-2022-02/neverd1m_infra/cloud-testapp/yc-creation/install_ruby.sh"
+  - wget "https://raw.githubusercontent.com/Otus-DevOps-2022-02/neverd1m_infra/cloud-testapp/install_ruby.sh"
   - bash install_ruby.sh
-  - wget "https://raw.githubusercontent.com/Otus-DevOps-2022-02/neverd1m_infra/cloud-testapp/yc-creation/install_mongodb.sh"
+  - wget "https://raw.githubusercontent.com/Otus-DevOps-2022-02/neverd1m_infra/cloud-testapp/install_mongodb.sh"
   - bash install_mongodb.sh
-  - wget "https://raw.githubusercontent.com/Otus-DevOps-2022-02/neverd1m_infra/cloud-testapp/yc-creation/deploy.sh"
+  - wget "https://raw.githubusercontent.com/Otus-DevOps-2022-02/neverd1m_infra/cloud-testapp/deploy.sh"
   - bash deploy.sh
   - rm install_ruby.sh install_mongodb.sh deploy.sh
