@@ -1,0 +1,6 @@
+{
+    "folder_id": "gsdkfjghkl3j4hkl4gj45",
+    "source_image_family": "ubuntu-2004-lts",
+    "service_account_key_file": "key.json.example",
+    "subnet_id": "f543ig5ing5i6hng"
+  }
